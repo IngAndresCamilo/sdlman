@@ -25,5 +25,21 @@ SDL_Window* SdlMan::CreateWindow(winpos_t *winpos) {
 		fprintf(stderr, "could not create window: %s\n", SDL_GetError());
 	}
 
+	// Creating a window consume the pointer of WindowsPosition
+	delete winpos;
+
 	return window;
+}
+
+void SdlMan::PaintMainSurface() {
+	SDL_FillRect(this->screen_surface, NULL, SDL_MapRGB(this->screen_surface->format, (Uint8)145, 255, 255));
+}
+
+
+void SdlMan::Refresh() {
+	SDL_UpdateWindowSurface(this->main_window);
+}
+
+void SdlMan::WaitFive() {
+	SDL_Delay(10000);
 }

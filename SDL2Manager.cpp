@@ -6,9 +6,13 @@ int main(int argc, char* args[]) {
 	// starting SDL media
 	SdlMan::InitMedia();
 	// generating a window with default position
-	SdlMan::CreateWindow(CreateWindowPos(DEFAULT_POS));
+	// calling the sdlm-allocator smart pointer
+	auto win = SdlmanAllocator(new SdlMan(SdlMan::CreateWindow(CreateWindowPos(DEFAULT_POS))));
+	win->PaintMainSurface();
+	win->Refresh();
+	win->WaitFive();
 
-
+	
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
 	_CrtDumpMemoryLeaks();
