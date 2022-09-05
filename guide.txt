@@ -1,0 +1,9 @@
+
+
+
+	SDL WINDOW:
+		Represents the main window of our application
+
+	SDL SURFACE:
+		A SDL surface is just a 2D image. A 2D image can be loaded from a file or it can be the image inside of a window. In this case it will be the image we see inside of the window on the screen.
+
