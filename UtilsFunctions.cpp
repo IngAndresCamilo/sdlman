@@ -1,7 +1,6 @@
 #include "SdlMan.h"
 
 
-
 winpos_t *CreateWindowPos(int type) {
 	winpos_t *winpos = nullptr;
 	switch (type)

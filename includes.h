@@ -1,0 +1,10 @@
+#pragma once
+#define _CRTDBG_MAP_ALLOC
+#include <SDL.h>
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+#include <memory>
+#include <stdlib.h>
+#include <crtdbg.h>
+#include "SdlmanDataStructure.h"

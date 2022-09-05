@@ -1,0 +1,11 @@
+
+	ESTA ES UNA GUIA PARA NO PERDERME EN ESTE CODIGO
+
+	MAIN:
+		
+		SLD2Manager.
+
+	Pendiente:
+
+		- Terminar la estructura de datos para los colores rgb
+		- Crear estructura de datos para distintas surfaces (futuro)

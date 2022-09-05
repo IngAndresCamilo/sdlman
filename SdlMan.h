@@ -1,14 +1,5 @@
 #pragma once
-
-#define _CRTDBG_MAP_ALLOC
-#include <SDL.h>
-#include <iostream>
-#include <stdio.h>
-#include <vector>
-#include <memory>
-#include <stdlib.h>
-#include <crtdbg.h>
-
+#include "includes.h"
 
 // for screen sizing
 #define SCREEN_WIDTH 640
@@ -40,7 +31,7 @@ public:
 	static SDL_Window* CreateWindow(winpos_t *winpos);
 
 	// method that affects the surface of the main window
-	void PaintMainSurface();
+	void PaintMainSurface(ColorsNode *color);
 	void Refresh();
 	void WaitFive();
 
@@ -65,7 +56,7 @@ public:
 		SDL_Quit();
 		delete this->ptr;
 	}
-	SdlMan& unwrap() { return *ptr; }
+	SdlMan& operator*() { return *ptr; }
 	SdlMan* operator->() { return ptr; }
 };
 

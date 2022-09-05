@@ -31,8 +31,8 @@ SDL_Window* SdlMan::CreateWindow(winpos_t *winpos) {
 	return window;
 }
 
-void SdlMan::PaintMainSurface() {
-	SDL_FillRect(this->screen_surface, NULL, SDL_MapRGB(this->screen_surface->format, (Uint8)145, 255, 255));
+void SdlMan::PaintMainSurface(ColorsNode *color) {
+	SDL_FillRect(this->screen_surface, NULL, SDL_MapRGB(this->screen_surface->format, color->R, color->G, color->B));
 }
 
 
