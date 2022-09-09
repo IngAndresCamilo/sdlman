@@ -60,7 +60,7 @@ public:
 		printf("Freeing memory allocated for surfaces...\n\n");
 		for (std::pair<char*, SDL_Surface*> p : this->surfaces) {
 			SDL_FreeSurface(p.second);
-			printf("\t- %s DELETE\n", p.first);
+			printf("\t- %s DELETED\n\n", p.first);
 		}
 	}
 };

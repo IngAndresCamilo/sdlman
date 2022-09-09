@@ -44,9 +44,24 @@ void SdlMan::WaitFive() {
 	SDL_Delay(5000);
 }
 
+void SdlMan::WaitSecond() {
+	SDL_Delay(1000);
+}
+
 void SdlMan::Clean() {
 
-} 
+}
+
+void SdlMan::MergeWSurface(char* surface_name) {
+	SDL_Surface* try_surface = this->AccessSurfaces()->GetSurface(surface_name);
+	
+	if (!try_surface)
+		return;
+
+	SDL_BlitSurface(try_surface, NULL, this->screen_surface, NULL);
+}
+
+
 
 // Methods GETTER for Access to external classes
 

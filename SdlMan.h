@@ -36,7 +36,9 @@ public:
 	void PaintMainSurface(ColorsNode *color);
 	void Refresh();
 	void WaitFive();
+	void WaitSecond();
 	static void Clean();
+	void MergeWSurface(char *surface_name);
 
 	// methods for colorlist
 	ColorsList* AccessColors();
@@ -63,25 +65,6 @@ public:
 	}
 } ;
 
-
-// Custom smart pointer por Sdlman class
-class SdlmanAllocator
-{
-private:
-	
-public:
-	SdlMan* ptr;
-	explicit SdlmanAllocator(SdlMan* p) { ptr = p; }
-
-	~SdlmanAllocator() {
-		SDL_DestroyWindow(this->ptr->GetWindow());
-		SDL_Quit();
-		std::cout << "SDL se ha cerrado correctamente" << std::endl;
-		delete this->ptr;
-	}
-	SdlMan& operator*() { return *ptr; }
-	SdlMan* operator->() { return ptr; }
-};
 
 
 winpos_t* CreateWindowPos(int type);

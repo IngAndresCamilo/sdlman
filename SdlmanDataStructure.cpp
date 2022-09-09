@@ -59,4 +59,6 @@ SDL_Surface* Surfaces::GetSurface(char* name) {
 			return p.second;
 		}
 	}
+
+	return nullptr;
 }
