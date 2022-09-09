@@ -162,6 +162,12 @@
   <ItemGroup>
     <Text Include="giide.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="sprites\bitmaps\zirox1.bmp" />
+    <Image Include="sprites\bitmaps\zirox2.bmp" />
+    <Image Include="sprites\bitmaps\zirox3.bmp" />
+    <Image Include="sprites\bitmaps\zirox4.bmp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

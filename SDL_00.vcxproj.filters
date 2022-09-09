@@ -44,4 +44,18 @@
       <Filter>Archivos de origen</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="sprites\bitmaps\zirox1.bmp">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="sprites\bitmaps\zirox2.bmp">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="sprites\bitmaps\zirox4.bmp">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="sprites\bitmaps\zirox3.bmp">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

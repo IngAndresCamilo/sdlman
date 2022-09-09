@@ -19,6 +19,7 @@ void ColorsList::PrintColors() {
 	for (; node != nullptr; node = node->next) {
 		printf("%s = (%d, %d, %d)\n", node->name, node->R, node->G, node->B);
 	}
+	std::cout << this->counter << std::endl;
 }
 
 void ColorsList::GetDefautColors() {
@@ -38,6 +39,24 @@ ColorsNode* ColorsList::GetColor(const char* color_name) {
 			return node;
 		}
 	}
-
 	return nullptr;
+}
+
+// END COLOR LIST FUNCTIONS
+
+
+
+
+
+void Surfaces::Add(char* name, SDL_Surface* surface) {
+	this->surfaces.push_back(std::make_pair<>(name, surface));
+	printf("LOADED surface:\n\t- key:%s  (%p)\n\t>> size: %dkb\n\n", name, surface, surface->pitch);
+}
+
+SDL_Surface* Surfaces::GetSurface(char* name) {
+	for (std::pair<char*, SDL_Surface*> p : this->surfaces) {
+		if (!strcmp(p.first, name)) {
+			return p.second;
+		}
+	}
 }

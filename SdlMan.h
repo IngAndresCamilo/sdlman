@@ -24,6 +24,8 @@ class SdlMan
 private:
 	SDL_Window* main_window;
 	SDL_Surface* screen_surface;
+	ColorsList* colors;
+	Surfaces* external_surfaces;
 public:
 	SDL_Window* GetWindow();
 	static void InitMedia();
@@ -34,11 +36,30 @@ public:
 	void PaintMainSurface(ColorsNode *color);
 	void Refresh();
 	void WaitFive();
+	static void Clean();
+
+	// methods for colorlist
+	ColorsList* AccessColors();
+
+	// methods for surfaces
+	Surfaces* AccessSurfaces();
+
 
 	// contructor
 	SdlMan(SDL_Window* win) {
 		this->main_window = win;
 		this->screen_surface = SDL_GetWindowSurface(this->main_window);
+		this->colors = new ColorsList();
+		this->colors->GetDefautColors();
+		this->external_surfaces = new Surfaces();
+	}
+
+	~SdlMan() {
+		SDL_DestroyWindow(this->GetWindow());
+		SDL_Quit();
+		delete this->external_surfaces;
+		delete this->colors;
+		std::cout << "The main window has been destroyed succesfully" << std::endl;
 	}
 } ;
 
@@ -47,13 +68,15 @@ public:
 class SdlmanAllocator
 {
 private:
-	SdlMan* ptr;
+	
 public:
+	SdlMan* ptr;
 	explicit SdlmanAllocator(SdlMan* p) { ptr = p; }
 
 	~SdlmanAllocator() {
 		SDL_DestroyWindow(this->ptr->GetWindow());
 		SDL_Quit();
+		std::cout << "SDL se ha cerrado correctamente" << std::endl;
 		delete this->ptr;
 	}
 	SdlMan& operator*() { return *ptr; }

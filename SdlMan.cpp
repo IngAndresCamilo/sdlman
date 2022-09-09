@@ -41,5 +41,20 @@ void SdlMan::Refresh() {
 }
 
 void SdlMan::WaitFive() {
-	SDL_Delay(10000);
+	SDL_Delay(5000);
+}
+
+void SdlMan::Clean() {
+
+} 
+
+// Methods GETTER for Access to external classes
+
+ColorsList* SdlMan::AccessColors() {
+	return this->colors;
+}
+
+
+Surfaces* SdlMan::AccessSurfaces() {
+	return this->external_surfaces;
 }

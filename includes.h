@@ -7,4 +7,7 @@
 #include <memory>
 #include <stdlib.h>
 #include <crtdbg.h>
+
+#define STR(s) (char*)s
+
 #include "SdlmanDataStructure.h"

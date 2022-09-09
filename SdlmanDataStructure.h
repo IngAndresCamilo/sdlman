@@ -38,6 +38,29 @@ public:
 	void PrintColors();
 	void GetDefautColors();
 	ColorsNode* GetColor(const char *color_name);
+	//void Delete(int idx);
 };
 
 
+
+class Surfaces {
+public:
+	std::vector<std::pair<char*, SDL_Surface*>> surfaces;
+
+	Surfaces() {
+		this->surfaces = std::vector<std::pair<char*, SDL_Surface*>>();
+	}
+
+	// add a new surface
+	void Add(char* name, SDL_Surface* surface);
+	// get the surface by name
+	SDL_Surface* GetSurface(char* name);
+	// free surface list
+	~Surfaces() {
+		printf("Freeing memory allocated for surfaces...\n\n");
+		for (std::pair<char*, SDL_Surface*> p : this->surfaces) {
+			SDL_FreeSurface(p.second);
+			printf("\t- %s DELETE\n", p.first);
+		}
+	}
+};
